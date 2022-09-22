@@ -12,14 +12,21 @@ import { TeamsContext } from "./teams/teams-context";
 import { getGitpodService } from "./service/service";
 import { iconForAuthProvider, openAuthorizeWindow, simplifyProviderName, getSafeURLRedirect } from "./provider-utils";
 import gitpod from "./images/gitpod.svg";
+// import cwide from "./images/cwide.svg";
 import gitpodDark from "./images/gitpod-dark.svg";
 import gitpodIcon from "./icons/gitpod.svg";
-import automate from "./images/welcome/automate.svg";
-import code from "./images/welcome/code.svg";
-import collaborate from "./images/welcome/collaborate.svg";
-import customize from "./images/welcome/customize.svg";
-import fresh from "./images/welcome/fresh.svg";
-import prebuild from "./images/welcome/prebuild.svg";
+// import automate from "./images/welcome/automate.svg";
+// import code from "./images/welcome/code.svg";
+// import collaborate from "./images/welcome/collaborate.svg";
+// import customize from "./images/welcome/customize.svg";
+// import fresh from "./images/welcome/fresh.svg";
+// import prebuild from "./images/welcome/prebuild.svg";
+import base from "./images/welcome/base.svg";
+import compatibility from "./images/welcome/compatibility.svg";
+import environment from "./images/welcome/environment.svg";
+import integration from "./images/welcome/integration.svg";
+import settings from "./images/welcome/settings.svg";
+import support from "./images/welcome/support.svg"
 import exclamation from "./images/exclamation.svg";
 import { getURLHash } from "./App";
 import ErrorMessage from "./components/ErrorMessage";
@@ -140,24 +147,27 @@ export function Login() {
                     <div id="feature-section-column" className="flex max-w-xl h-full mx-auto pt-6">
                         <div className="flex flex-col px-8 my-auto ml-auto">
                             <div className="mb-12">
-                                <img src={gitpod} className="h-8 block dark:hidden" alt="Gitpod light theme logo" />
-                                <img src={gitpodDark} className="h-8 hidden dark:block" alt="Gitpod dark theme logo" />
+                                {/* <img src={cwide} className="h-8 block dark:hidden" alt="Gitpod light theme logo" /> */}
+                                {/* <img src={gitpodDark} className="h-8 hidden dark:block" alt="Gitpod dark theme logo" /> */}
                             </div>
                             <div className="mb-10">
-                                <h1 className="text-5xl mb-3">Welcome to Gitpod</h1>
-                                <div className="text-gray-400 text-lg">
-                                    Spin up fresh, automated dev environments for each task in the cloud, in seconds.
+                                <h1 className="text-4xl mb-3">Welcome to CosmWasm IDE</h1>
+                                <div className="text-gray-400 text-base">
+                                  An open-source IDE to simplify the development of CosmWasm smart contracts.
+                                    <p>
+                                      Powered by Oraichain x CosmWasm via InterWasm DAO.
+                                    </p>
                                 </div>
                             </div>
                             <div className="flex mb-10">
-                                <Item icon={code} iconSize="16" text="Always Ready&#x2011;To&#x2011;Code" />
-                                <Item icon={customize} text="Personalize your Workspace" />
-                                <Item icon={automate} text="Automate Your Development Setup" />
+                                <Item icon={base} iconSize="16" text="Code, edit, build, simulate, and deploy CosmWasm smart contract" />
+                                <Item icon={settings} text="A set of quick, convenient, and specific tools" />
+                                <Item icon={environment} text="Testing and developing environments" />
                             </div>
                             <div className="flex">
-                                <Item icon={prebuild} text="Continuously Prebuild Your Project" />
-                                <Item icon={collaborate} text="Collaborate With Your Team" />
-                                <Item icon={fresh} text="Fresh Workspace For Each New Task" />
+                                <Item icon={compatibility} text="High compatibility level to Cosmos-SDK blockchains" />
+                                <Item icon={integration} text="Base on Gitpod Self-Hosted" />
+                                <Item icon={support} text="Technical support from Oraichain" />
                             </div>
                         </div>
                     </div>
