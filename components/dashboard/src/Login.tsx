@@ -11,10 +11,10 @@ import { UserContext } from "./user-context";
 import { TeamsContext } from "./teams/teams-context";
 import { getGitpodService } from "./service/service";
 import { iconForAuthProvider, openAuthorizeWindow, simplifyProviderName, getSafeURLRedirect } from "./provider-utils";
-import gitpod from "./images/gitpod.svg";
+// import gitpod from "./images/gitpod.svg";
 // import cwide from "./images/cwide.svg";
-import gitpodDark from "./images/gitpod-dark.svg";
-import gitpodIcon from "./icons/gitpod.svg";
+// import gitpodDark from "./images/gitpod-dark.svg";
+// import gitpodIcon from "./icons/gitpod.svg";
 // import automate from "./images/welcome/automate.svg";
 // import code from "./images/welcome/code.svg";
 // import collaborate from "./images/welcome/collaborate.svg";
@@ -26,7 +26,7 @@ import compatibility from "./images/welcome/compatibility.svg";
 import environment from "./images/welcome/environment.svg";
 import integration from "./images/welcome/integration.svg";
 import settings from "./images/welcome/settings.svg";
-import support from "./images/welcome/support.svg"
+import support from "./images/welcome/support.svg";
 import exclamation from "./images/exclamation.svg";
 import { getURLHash } from "./App";
 import ErrorMessage from "./components/ErrorMessage";
@@ -147,26 +147,28 @@ export function Login() {
                     <div id="feature-section-column" className="flex max-w-xl h-full mx-auto pt-6">
                         <div className="flex flex-col px-8 my-auto ml-auto">
                             <div className="mb-12">
-                                {/* <img src={cwide} className="h-8 block dark:hidden" alt="Gitpod light theme logo" /> */}
+                                {/* <img src={cwide} className="h-8 block dark:hidden" alt="cwide-logo" /> */}
                                 {/* <img src={gitpodDark} className="h-8 hidden dark:block" alt="Gitpod dark theme logo" /> */}
                             </div>
                             <div className="mb-10">
                                 <h1 className="text-4xl mb-3">Welcome to CosmWasm IDE</h1>
                                 <div className="text-gray-400 text-base">
-                                  An open-source IDE to simplify the development of CosmWasm smart contracts.
-                                    <p>
-                                      Powered by Oraichain x CosmWasm via InterWasm DAO.
-                                    </p>
+                                    An open-source IDE to simplify the development of CosmWasm smart contracts.
+                                    <p>Powered by Oraichain x CosmWasm via InterWasm DAO.</p>
                                 </div>
                             </div>
                             <div className="flex mb-10">
-                                <Item icon={base} iconSize="16" text="Code, edit, build, simulate, and deploy CosmWasm smart contract" />
+                                <Item
+                                    icon={base}
+                                    iconSize="16"
+                                    text="Code, edit, build, simulate, and deploy CosmWasm smart contract"
+                                />
                                 <Item icon={settings} text="A set of quick, convenient, and specific tools" />
                                 <Item icon={environment} text="Testing and developing environments" />
                             </div>
                             <div className="flex">
                                 <Item icon={compatibility} text="High compatibility level to Cosmos-SDK blockchains" />
-                                <Item icon={integration} text="Base on Gitpod Self-Hosted" />
+                                <Item icon={integration} text="Using Self-hosted Gitpod (free license)" />
                                 <Item icon={support} text="Technical support from Oraichain" />
                             </div>
                         </div>
@@ -181,30 +183,23 @@ export function Login() {
                     <div className="flex-grow h-100 flex flex-row items-center justify-center">
                         <div className="rounded-xl px-10 py-10 mx-auto">
                             <div className="mx-auto pb-8">
-                                <img
-                                    src={providerFromContext ? gitpod : gitpodIcon}
-                                    className="h-14 mx-auto block dark:hidden"
-                                    alt="Gitpod's logo"
-                                />
-                                <img
-                                    src={providerFromContext ? gitpodDark : gitpodIcon}
-                                    className="h-14 hidden mx-auto dark:block"
-                                    alt="Gitpod dark theme logo"
-                                />
+                                {/* <img src={cwide} className="h-14 mx-auto block dark:hidden" alt="cwide's logo" /> */}
                             </div>
 
                             <div className="mx-auto text-center pb-8 space-y-2">
                                 {providerFromContext ? (
                                     <>
                                         <h2 className="text-xl text-black dark:text-gray-50 font-semibold">
-                                            Open a cloud-based developer environment
+                                            Open a Smart Contract developer environment
                                         </h2>
                                         <h2 className="text-xl">for the repository {repoPathname?.slice(1)}</h2>
                                     </>
                                 ) : (
                                     <>
-                                        <h1 className="text-3xl">Log in{showWelcome ? "" : " to Gitpod"}</h1>
-                                        <h2 className="uppercase text-sm text-gray-400">ALWAYS READY-TO-CODE</h2>
+                                        <h1 className="text-3xl">Log in</h1>
+                                        <h2 className="uppercase text-sm text-gray-400">
+                                            Open a Smart Contract developer environment
+                                        </h2>
                                     </>
                                 )}
                             </div>
@@ -244,19 +239,11 @@ export function Login() {
                             By signing in, you agree to our{" "}
                             <a
                                 className="gp-link hover:text-gray-600"
-                                target="gitpod-terms"
-                                href="https://www.gitpod.io/terms/"
+                                target="oraichain-cwide-terms"
+                                href="https://github.com/oraichain/cw-ide-vscode/blob/master/LICENSE"
                             >
                                 terms of service
                             </a>{" "}
-                            and{" "}
-                            <a
-                                className="gp-link hover:text-gray-600"
-                                target="gitpod-privacy"
-                                href="https://www.gitpod.io/privacy/"
-                            >
-                                privacy policy
-                            </a>
                             .
                         </span>
                     </div>

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { useLocation, useRouteMatch } from "react-router";
 import { Location } from "history";
 import { countries } from "countries-list";
-import gitpodIcon from "./icons/gitpod.svg";
+// import cwide from "./images/cwide.svg";
 import { getGitpodService, gitpodHostUrl } from "./service/service";
 import { UserContext } from "./user-context";
 import { TeamsContext, getCurrentTeam } from "./teams/teams-context";
@@ -398,9 +398,9 @@ export default function Menu() {
             <header className="app-container flex flex-col pt-4 space-y-4" data-analytics='{"button_type":"menu"}'>
                 <div className="flex h-10 mb-3">
                     <div className="flex justify-between items-center pr-3">
-                        <Link to="/">
-                            <img src={gitpodIcon} className="h-6" alt="Gitpod's logo" />
-                        </Link>
+                        {/* <Link to="/">
+                            <img src={cwide} className="h-6" alt="Gitpod's logo" />
+                        </Link> */}
                         {!isMinimalUI && <div className="ml-2 text-base">{renderTeamMenu()}</div>}
                     </div>
                     <div className="flex flex-1 items-center w-auto" id="menu">
